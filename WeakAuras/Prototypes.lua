@@ -2492,7 +2492,7 @@ Private.event_prototypes = {
       },
       {
         name = "showAbsorb",
-        display = L["Fetch Absorb"],
+        display = WeakAuras.newFeatureString .. L["Fetch Absorb"],
         type = "toggle",
         test = "true",
         reloadOptions = true,
@@ -2508,7 +2508,7 @@ Private.event_prototypes = {
       },
       {
         name = "showHealAbsorb",
-        display = L["Fetch Heal Absorb"],
+        display = WeakAuras.newFeatureString .. L["Fetch Heal Absorb"],
         type = "toggle",
         test = "true",
         reloadOptions = true,
@@ -2808,7 +2808,7 @@ Private.event_prototypes = {
           end
           if (trigger.absorbHealMode == "OVERLAY_FROM_START") then
             return 0, healabsorb;
-          elseif (trigger.absorbMode == "OVERLAY_FROM_END") then
+          elseif (trigger.absorbHealMode == "OVERLAY_FROM_END") then
             return "forward", healabsorb;
           else
             local total = state.total
@@ -7704,7 +7704,7 @@ Private.event_prototypes = {
         "PLAYER_TARGET_CHANGED"
       },
       ["unit_events"] = {
-        ["player"] = {"UNIT_STATS", "UNIT_ATTACK_POWER", "UNIT_AURA", "PLAYER_DAMAGE_DONE_MODS", "UNIT_RESISTANCES"}
+        ["player"] = {"UNIT_STATS", "UNIT_ATTACK_POWER", "UNIT_ATTACK_SPEED", "UNIT_AURA", "PLAYER_DAMAGE_DONE_MODS", "UNIT_RESISTANCES", "UNIT_DEFENSE"}
       }
     },
     internal_events = function(trigger, untrigger)
